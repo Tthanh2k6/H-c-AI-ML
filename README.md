@@ -1,81 +1,82 @@
-# AI-ML — Học Máy & Học Sâu
+# AI & Machine Learning Notebook
 
-> Tổng hợp bài học và bài tập tự thực hành về **Machine Learning** và **Deep Learning** (Python).
-> Mỗi file là một chủ đề độc lập, chạy được riêng để minh hoạ một thuật toán hoặc kỹ thuật.
+**Học từ dữ liệu nhỏ. Hiểu từng bước. Thử nghiệm bằng code.**
 
-**Tự code 100%, không dùng AI hỗ trợ** — viết tay để hiểu rõ từng bước từ tiền xử lý dữ liệu,
-huấn luyện mô hình đến đánh giá kết quả.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 
----
+Kho bài học và bài tập thực hành Machine Learning, từ xử lý dữ liệu bảng đến phân loại, hồi quy và mạng nơ-ron. Các ví dụ được chia thành script nhỏ để đọc, thay đổi tham số và quan sát kết quả trực tiếp.
 
-## 📂 Cấu trúc thư mục
+[Nội dung](#nội-dung) · [Chạy thử](#chạy-thử) · [Lộ trình đọc](#lộ-trình-đọc) · [Cấu trúc](#cấu-trúc)
 
-```text
-AI-ML/
-├── Basic/                       # Machine Learning cơ bản (scikit-learn)
-│   ├── Bài học/                 # Code mẫu theo từng chủ đề
-│   │   ├── pandas_intro.py              # Làm quen pandas (đọc/lọc/biến đổi dữ liệu)
-│   │   ├── data_cleaning.py             # Làm sạch dữ liệu
-│   │   ├── data_preprocessing.py        # Tiền xử lý dữ liệu đầu vào
-│   │   ├── scaling.py                   # Chuẩn hoá đặc trưng (StandardScaler)
-│   │   ├── KNN.py                       # Phân loại K-Nearest Neighbors
-│   │   ├── decision_tree.py             # Cây quyết định (Decision Tree)
-│   │   ├── multiclass_classification.py # Phân loại nhiều lớp
-│   │   ├── confusion_matrix.py          # Ma trận nhầm lẫn & các chỉ số đánh giá
-│   │   ├── cross_validation.py          # Kiểm định chéo (cross-validation)
-│   │   ├── pipeline.py                  # Gộp tiền xử lý + mô hình bằng Pipeline
-│   │   └── tf_idf.py                    # Vector hoá văn bản TF-IDF + Naive Bayes
-│   ├── Bài tập/                  # Bài tự luyện
-│   │   ├── house_price_prediction.py    # Hồi quy tuyến tính dự đoán giá nhà
-│   │   ├── pass_fail.py                 # Phân loại đỗ/trượt
-│   │   ├── knn_exercise.py              # Luyện KNN
-│   │   └── ...                          # exercise1/2, ml_ex1, pandas_ex1, practice, project, test_ml
-│   ├── csdl.csv                  # Dữ liệu mẫu
-│   └── input.csv                # Dữ liệu mẫu
-│
-└── Deep learning/               # Học sâu (TensorFlow / Keras)
-    ├── bài học/
-    │   ├── mlp_baseline.py              # Mạng perceptron nhiều lớp (MLP) cơ bản
-    │   ├── mlp_classifier.py            # MLP phân loại
-    │   ├── mnist_baseline.py            # Baseline trên bộ chữ số MNIST
-    │   ├── mnist_classification.py      # Phân loại chữ số viết tay MNIST
-    │   ├── mnist_mlp.py                 # MNIST bằng MLP
-    │   └── convolutional_neural_network.py  # Mạng nơ-ron tích chập (CNN)
-    └── bài tập/
-        └── mlp_practice.py             # Bài luyện MLP
+## Nội dung
+
+| Mảng kiến thức | Nội dung thực hành |
+| --- | --- |
+| Dữ liệu | pandas, làm sạch, tiền xử lý và chuẩn hóa đặc trưng |
+| Học có giám sát | KNN, cây quyết định, hồi quy và phân loại nhiều lớp |
+| Đánh giá mô hình | Confusion matrix, cross-validation, các chỉ số phân loại |
+| Quy trình huấn luyện | Pipeline kết hợp biến đổi dữ liệu và mô hình |
+| Văn bản | TF-IDF và phân loại văn bản |
+| Mạng nơ-ron | MLP, nhận dạng chữ số và ví dụ CNN |
+
+## Chạy thử
+
+Cần Python 3. Mở terminal tại thư mục gốc repo, tạo môi trường riêng và cài thư viện:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install numpy pandas scipy matplotlib scikit-learn tensorflow
+python "Basic/Bài học/KNN.py"
 ```
 
----
+Trên macOS/Linux, kích hoạt môi trường bằng `source .venv/bin/activate`.
 
-## 🛠️ Công nghệ sử dụng
+Ví dụ KNN in dự đoán kết quả thi từ số giờ học và mở biểu đồ xác suất. Để thử mạng nơ-ron phân loại chữ số:
 
-- **Python 3**
-- **scikit-learn** — KNN, Decision Tree, Linear/Logistic Regression, Naive Bayes, MLP, pipeline, cross-validation, các chỉ số đánh giá.
-- **TensorFlow / Keras** — MLP & CNN cho phần Deep Learning.
-- **NumPy**, **pandas**, **SciPy** — xử lý số liệu và dữ liệu bảng.
-- **Matplotlib** — trực quan hoá kết quả.
-
----
-
-## ⚡ Cài đặt & Chạy
-
-```bash
-# Cài thư viện cần thiết
-pip install scikit-learn tensorflow numpy pandas scipy matplotlib
-
-# Chạy thử một bài bất kỳ
-python "Basic/Bài học/KNN.py"
+```powershell
 python "Deep learning/bài học/mnist_classification.py"
 ```
 
-> Mỗi file độc lập, chạy trực tiếp để xem kết quả huấn luyện và biểu đồ. Một số bài đọc dữ liệu
-> từ `Basic/csdl.csv` / `Basic/input.csv` — chạy từ thư mục gốc dự án để đường dẫn tương đối khớp.
+Script này dùng `load_digits()` của scikit-learn; tên file có chữ `mnist` nhưng dữ liệu thực tế là bộ digits. Các script học sâu khác có thể dùng nguồn dữ liệu và thư viện khác.
+
+### Chạy bài có dữ liệu CSV
+
+Một số bài đọc `csdl.csv` hoặc `input.csv` theo **thư mục làm việc hiện tại**. Với các bài này, chuyển vào `Basic` trước:
+
+```powershell
+cd Basic
+python "Bài học/data_cleaning.py"
+python "Bài học/data_preprocessing.py"
+```
+
+## Lộ trình đọc
+
+1. **Làm quen dữ liệu:** đọc `pandas_intro.py`, `data_cleaning.py`, `data_preprocessing.py`.
+2. **Xây mô hình đầu tiên:** thử `KNN.py`, `decision_tree.py` và các bài phân loại/hồi quy.
+3. **Đánh giá:** thay đổi cách chia dữ liệu, xem confusion matrix và cross-validation.
+4. **Ghép quy trình:** đọc `pipeline.py`, thử thay đổi bước chuẩn hóa.
+5. **Mạng nơ-ron:** chuyển sang các ví dụ MLP và CNN trong `Deep learning`.
+
+Mỗi lần thử nên ghi lại dữ liệu, tham số, cách chia tập và chỉ số đánh giá để so sánh kết quả có ý nghĩa.
+
+## Cấu trúc
+
+```text
+Basic/
+├── Bài học/          # Các ví dụ theo chủ đề
+├── Bài tập/          # Bài luyện tập và bài toán nhỏ
+├── csdl.csv
+└── input.csv
+Deep learning/
+├── bài học/          # MLP, chữ số, CNN
+└── bài tập/          # Thực hành mạng nơ-ron
+```
+
+Đây là kho học tập, chưa có bộ phụ thuộc khóa phiên bản hay bộ kiểm thử chung. Một số script mở cửa sổ biểu đồ hoặc tải dữ liệu khi chạy; kết quả giữa các lần chạy có thể khác nếu chưa cố định seed.
 
 ---
 
-## 📌 Ghi chú
-
-Dự án phục vụ mục đích **tự học**: từ Machine Learning cơ bản (phân loại, hồi quy, đánh giá mô hình)
-đến Deep Learning (MLP, CNN, MNIST). Code viết tay từng bước, không dùng AI sinh code.
-
-- **Tác giả**: Trần Trung Thành ([@Tthanh2k6](https://github.com/Tthanh2k6))
+**Trần Trung Thành** · [@Tthanh2k6](https://github.com/Tthanh2k6)
